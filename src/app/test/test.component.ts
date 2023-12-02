@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -9,7 +9,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './test.component.sass',
 })
 export class TestComponent {
+  @Input() name = '';
+
   search = 'yo';
+
+  @Output()
+  searchChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  onSearchChanged() {
+    this.searchChanged.emit(this.search);
+  }
   public myId = 'niceID';
-  public name = 'yoo';
 }

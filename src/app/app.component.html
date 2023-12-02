@@ -226,8 +226,14 @@
         </defs>
       </svg>
       <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-      <div class="app-test"></div>
+      <p [ngStyle]="{ color: style }">
+        Congratulations! Your app is running. 🎉
+      </p>
+      <div
+        class="app-test"
+        [name]="title"
+        (searchChanged)="onSearchChanged($event)"
+      ></div>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

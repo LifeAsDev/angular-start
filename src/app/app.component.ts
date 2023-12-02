@@ -12,5 +12,10 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.component.sass',
 })
 export class AppComponent {
+  style = 'yo';
+  onSearchChanged(style: string) {
+    this.style = style;
+    console.log(this.style);
+  }
   title = 'angular-start';
 }
